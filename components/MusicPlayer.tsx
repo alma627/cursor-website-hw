@@ -34,37 +34,22 @@ export function MusicPlayer() {
     });
   };
 
-  return (
-    <div className="rounded-xl border border-white/10 bg-black/40 p-4 backdrop-blur-sm">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <p className="text-xs uppercase tracking-widest text-zinc-500">
-            音乐播放器
-          </p>
-          <p className="mt-1 text-sm text-zinc-200">本地：true ending.SHIBEI.mp3</p>
-           <audio 
-        controls 
-        crossOrigin="anonymous"
-        src="https://raw.githubusercontent.com/alma627/cursor-website-hw/main/public/music/true%20ending.SHIBEI.MP3"
-      />
-        </div>
-        <div className="flex items-center gap-2">
-          {blocked ? (
-            <button
-              type="button"
-              onClick={resume}
-              className="rounded-lg bg-amber-500/90 px-3 py-1.5 text-sm font-medium text-stone-950 transition hover:bg-amber-400"
-            >
-              点击播放（解除浏览器限制）
-            </button>
-          ) : (
-            <span className="text-xs text-emerald-400/90">
-              {playing ? "正在播放" : "加载中…"}
-            </span>
-          )}
-        </div>
+   return (
+  <div className="rounded-xl border border-white/10 bg-black/40 p-4 backdrop-blur-sm">
+    <div className="flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <p className="text-xs uppercase tracking-widest text-zinc-500">
+          音乐播放器
+        </p>
+        <p className="mt-1 text-sm text-zinc-200">正在播放: True Ending</p>
+        
+        {/* 这是你唯一需要的播放器，带上跨域属性 */}
+        <audio 
+          controls 
+          crossOrigin="anonymous" 
+          src="https://raw.githubusercontent.com/alma627/cursor-website-hw/main/public/music/true%20ending.SHIBEI.MP3"
+        />
       </div>
-      <audio ref={audioRef} src={SRC} loop preload="auto" className="mt-3 w-full" controls />
     </div>
-  );
-}
+  </div>
+);
