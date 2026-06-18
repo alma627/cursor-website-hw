@@ -16,7 +16,7 @@ const RICE_LOG_EMBED_SRC =
   "https://somber-gladiolus-6d1.notion.site/ebd//38235f777ec980b88826fd3e98ce01d1?v=38235f777ec98009bdc0000c53f3eb95";
 
 const NAV = [
-  { id: "visual", label: "视觉采样区" },
+  { id: "visual", label: "作品画廊" },
   { id: "music", label: "音乐播放器" },
   { id: "notion", label: "精神饭团食用记录" },
   { id: "guestbook", label: "留言区" },
@@ -138,7 +138,7 @@ export function HomeShell({ gallery }: Props) {
             </section>
 
             <section id="visual" className="scroll-mt-28 pt-16">
-              <h2 className="mb-4 text-xl font-semibold text-white">视觉采样区</h2>
+              <h2 className="mb-4 text-xl font-semibold text-white">作品画廊</h2>
               <div
                 className="rounded-2xl border border-white/10 p-4 sm:p-6"
                 style={{
