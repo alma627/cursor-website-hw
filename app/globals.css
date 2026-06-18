@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-w: 18rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen antialiased text-zinc-100;
+  background-color: #0c0a09;
+  background-image: url("/images/global-tile.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+/*
+ * 原生自定义光标（PNG 建议导出为 32×32，热点 16 16 对齐瞳孔中心）
+ * Windows 下 cursor:url 仅可靠显示 ≤32px 图片，过大将被忽略或变糊
+ */
+* {
+  cursor: url("/images/cursor-normal.png") 16 16, auto !important;
+}
+
+a:hover,
+button:hover,
+input:hover,
+textarea:hover,
+select:hover,
+img:hover,
+iframe:hover,
+label[for]:hover,
+[role="button"]:hover,
+.cursor-pointer:hover {
+  cursor: url("/images/cursor-hover.png") 16 16, pointer !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible,
+.cursor-pointer:focus-visible {
+  cursor: url("/images/cursor-hover.png") 16 16, pointer !important;
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed !important;
+}
+
+/* Waline · 半透明磨砂卡片 */
+.waline-card {
+  --waline-theme-color: #d97706;
+  --waline-bgcolor: transparent;
+  --waline-bgcolor-light: rgb(63 63 70 / 0.35);
+  --waline-color: #e4e4e7;
+  --waline-border-color: rgb(255 255 255 / 0.1);
+  --waline-disable-color: #71717a;
+  --waline-info-bgcolor: rgb(24 24 27 / 0.55);
+  --waline-info-color: #a1a1aa;
+
+  border-radius: 1rem;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  background: rgb(39 39 42 / 0.42);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow:
+    0 4px 24px rgb(0 0 0 / 0.28),
+    inset 0 1px 0 rgb(255 255 255 / 0.06);
+  padding: 1.25rem 1.5rem;
+}
+
+.waline-mount {
+  min-height: 120px;
+}
+
+.waline-card .wl-card,
+.waline-card .wl-panel,
+.waline-card .wl-meta-input,
+.waline-card .wl-editor,
+.waline-card .wl-input {
+  background: rgb(24 24 27 / 0.45) !important;
+  border-color: rgb(255 255 255 / 0.1) !important;
+  backdrop-filter: blur(8px);
+}
+
+.waline-card .wl-comment {
+  border-color: rgb(255 255 255 / 0.08) !important;
+}
+
+/* Masonry column breaks */
+.gallery-masonry-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* 侧栏：仓鼠头像 + 后方像素翅膀 */
+.sidebar-avatar-wrap {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.sidebar-avatar-wings {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 0;
+  width: 15rem;
+  max-width: none;
+  transform: translate(-50%, -48%);
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.sidebar-avatar {
+  position: relative;
+  z-index: 10;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  border: 2px solid rgb(255 255 255 / 0.25);
+  object-fit: cover;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.35);
+}
