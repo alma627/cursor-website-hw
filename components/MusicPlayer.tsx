@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const SRC = "/music/真结局-史悲.mp3";
+const SRC = "/music/true ending.SHIBEI.mp3";
 
 export function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -41,7 +41,7 @@ export function MusicPlayer() {
           <p className="text-xs uppercase tracking-widest text-zinc-500">
             音乐播放器
           </p>
-          <p className="mt-1 text-sm text-zinc-200">本地：真结局-史悲.mp3</p>
+          <p className="mt-1 text-sm text-zinc-200">本地：true endding.SHIBEI.mp3</p>
         </div>
         <div className="flex items-center gap-2">
           {blocked ? (
