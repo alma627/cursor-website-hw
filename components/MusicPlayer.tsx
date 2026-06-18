@@ -10,11 +10,12 @@ export default function MusicPlayer() {
             音乐播放器
           </p>
           <p className="mt-1 text-sm text-zinc-200">正在播放: True Ending</p>
-          <audio 
-            controls 
-            crossOrigin="anonymous" 
-            src="https://raw.githubusercontent.com/alma627/cursor-website-hw/main/public/music/true%20ending.SHIBEI.MP3"
-          />
+         <audio 
+  controls 
+  crossOrigin="anonymous" 
+  className="w-full"
+  src="https://raw.githubusercontent.com/alma627/cursor-website-hw/main/public/music/true%20ending.SHIBEI.MP3"
+/>
         </div>
       </div>
     </div>
