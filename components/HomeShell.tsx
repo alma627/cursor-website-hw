@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 import { FullscreenSegue } from "@/components/FullscreenSegue";
 import { WalineComments } from "@/components/WalineComments";
-import { MusicPlayer } from "@/components/MusicPlayer";
+import MusicPlayer from '@/components/MusicPlayer';
 
 const POKEMON_GIF = `/images/${encodeURIComponent("pokemon love GIF.gif")}`;
 
