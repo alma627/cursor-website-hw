@@ -1,40 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
-const SRC = "/music/true ending.SHIBEI.mp3";
-
-export function MusicPlayer() {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [blocked, setBlocked] = useState(false);
-  const [playing, setPlaying] = useState(false);
-
-  useEffect(() => {
-    const a = audioRef.current;
-    if (!a) return;
-    a.volume = 0.85;
-    void a
-      .play()
-      .then(() => {
-        setPlaying(true);
-        setBlocked(false);
-      })
-      .catch(() => {
-        setBlocked(true);
-        setPlaying(false);
-      });
-  }, []);
-
-  const resume = () => {
-    const a = audioRef.current;
-    if (!a) return;
-    void a.play().then(() => {
-      setPlaying(true);
-      setBlocked(false);
-    });
-  };
-
- import React from 'react';
+import React from 'react';
 
 export default function MusicPlayer() {
   return (
